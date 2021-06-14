@@ -11,9 +11,9 @@ app.use(bodyParser.json())
 const useCaseFactory: UseCaseFactory = factory(inMemoryEventStore());
 const resources = accountResources(useCaseFactory)
 
-app.get('/account', resources.account)
-app.post('/deposit', resources.deposit)
-app.post('/withdraw', resources.withdraw)
+app.get('/account', resources.getAccount)
+app.post('/deposit', resources.postDeposit)
+app.post('/withdraw', resources.postWithdraw)
 
 app.listen(3000, () => {
     console.log("listening on port 3000");
