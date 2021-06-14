@@ -6,8 +6,8 @@ import {Account} from "../../domain/types/Account";
 
 export const useCaseFactory: (eventStore: EventStore) => UseCaseFactory = (eventStore) => ({
     getAccount: () => getAccount(eventStore),
-    postDeposit: (amount: number) => deposit(eventStore, amount),
-    postWithdraw: (amount: number) => withdraw(eventStore, amount),
+    deposit: (amount: number) => deposit(eventStore, amount),
+    withdraw: (amount: number) => withdraw(eventStore, amount),
 })
 
 export interface UseCaseFactory {
